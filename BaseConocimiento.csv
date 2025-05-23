@@ -1,0 +1,280 @@
+Nombre,Segmento,Cilindraje (cc),Marca,Precio Aproximado (COP),Pais de la Marca,Altura(mm),Economía en repuestos,Fiabilidad,Estética,Durabilidad,Popularidad,Exclusividad
+Aerox 155,Scooter,155,Yamaha,14050000,Japón,790,5,4,3,4,4,3
+Crypton FI,Urbana,115,Yamaha,6500000,Japón,775,2,4,5,4,3,1
+NMAX,Scooter,155,Yamaha,13550000,Japón,765,4,4,3,4,5,2
+NMAX Connected,Scooter,155,Yamaha,14750000,Japón,765,4,4,3,4,5,2
+XMAX 300,Scooter,292,Yamaha,32400000,Japón,795,5,5,2,5,4,4
+FZ 25 ABS,Urbana,249,Yamaha,14000000,Japón,795,3,4,3,4,3,2
+FZ Versión 3.0,Urbana,149,Yamaha,10150000,Japón,790,3,4,3,4,3,2
+SZRR,Urbana,149,Yamaha,9700000,Japón,800,3,4,3,4,3,2
+YCZ,Urbana,107,Yamaha,6050000,Japón,785,3,4,3,4,3,2
+YBRZ,Urbana,125,Yamaha,7000000,Japón,780,3,4,3,4,3,2
+XTZ 125,Doble Propósito,124,Yamaha,8750000,Japón,810,3,4,3,4,3,2
+XTZ 150,Doble Propósito,149,Yamaha,10550000,Japón,840,3,4,3,4,3,2
+R15 V4,Deportiva,155,Yamaha,17750000,Japón,790,3,4,3,4,3,2
+MT-15,Naked,155,Yamaha,14550000,Japón,810,3,4,3,4,3,2
+MT-03,Naked,321,Yamaha,24000000,Japón,780,3,4,3,4,3,2
+MT-07,Naked,689,Yamaha,35400000,Japón,805,3,4,3,4,3,2
+MT-09,Naked,889,Yamaha,48400000,Japón,825,3,4,3,4,3,2
+Ténéré 700,Adventure,689,Yamaha,53400000,Japón,880,3,4,3,4,3,2
+DR 150,Doble Propósito,149,Suzuki,8990000,Japón,830,3,4,3,4,3,2
+DR 150 FI ABS,Doble Propósito,149,Suzuki,9990000,Japón,830,3,4,3,4,3,2
+V-STROM 160,Adventure,155,Suzuki,14990000,Japón,795,3,4,3,4,3,2
+V-STROM 250 SX,Adventure,249,Suzuki,19990000,Japón,835,3,4,3,4,3,2
+BURGMAN FI,Scooter,124,Suzuki,10790000,Japón,735,3,4,3,4,3,2
+AX4,Urbana/Trabajo,113,Suzuki,5790000,Japón,765,3,4,3,4,3,2
+GN 125,Urbana/Clásica,124,Suzuki,6990000,Japón,765,3,4,3,4,3,2
+GIXXER 150 FI,Deportiva Urbana (Naked),155,Suzuki,10340000,Japón,795,3,4,3,4,3,2
+GIXXER 150 FI ABS,Deportiva Urbana (Naked),155,Suzuki,10990000,Japón,795,3,4,3,4,3,2
+GIXXER SF 150 FI ABS,Deportiva Urbana (Carenada),155,Suzuki,12597000,Japón,795,3,4,3,4,3,2
+GIXXER 250,Deportiva Urbana (Naked),249,Suzuki,15580000,Japón,800,3,4,3,4,3,2
+GIXXER SF 250,Deportiva Urbana (Carenada),249,Suzuki,16830000,Japón,800,3,4,3,4,3,2
+GSX-R150 ABS,Deportiva,149,Suzuki,14990000,Japón,785,3,4,3,4,3,2
+GSX-S150 ABS,Deportiva Urbana (Naked),149,Suzuki,16500000,Japón,785,3,4,3,4,3,2
+GSX 125R,Deportiva,124,Suzuki,7985000,Japón,178,3,4,3,4,3,2
+GSX-S1000,Hyper Naked,999,Suzuki,74990000,Japón,815,3,4,3,4,3,2
+GSX 8S,Hyper Naked,776,Suzuki,49990000,Japón,810,3,4,3,4,3,2
+Dio,Scooter,109,Honda,6790000,Japón,765,3,4,3,4,3,2
+PCX 160,Scooter,157,Honda,14290000,Japón,764,3,4,3,4,3,2
+CB125F,Urbana,124,Honda,7990000,Japón,790,3,4,3,4,3,2
+CB160F,Urbana,162,Honda,9990000,Japón,807,3,4,3,4,3,2
+XRE300,Doble Propósito,291,Honda,21790000,Brasil,860,3,4,3,4,3,2
+XR150L,Doble Propósito,149,Honda,9990000,Japón,825,3,4,3,4,3,2
+CB500X,Adventure,471,Honda,34990000,Tailandia,830,3,4,3,4,3,2
+CB500F,Naked,471,Honda,32990000,Tailandia,789,3,4,3,4,3,2
+CBR500R,Deportiva,471,Honda,36990000,Tailandia,785,3,4,3,4,3,2
+NC750X,Adventure,745,Honda,46990000,Japón,800,3,4,3,4,3,2
+CRF300L,Doble Propósito,286,Honda,24990000,Tailandia,880,3,4,3,4,3,2
+CRF300 Rally,Adventure,286,Honda,27990000,Tailandia,885,3,4,3,4,3,2
+CB650R,Neo Sports Café,649,Honda,42990000,Tailandia,810,3,4,3,4,3,2
+CBR650R,Deportiva,649,Honda,45990000,Tailandia,810,3,4,3,4,3,2
+Africa Twin CRF1100L,Adventure,1084,Honda,79990000,Japón,850,3,4,3,4,3,2
+Africa Twin Adventure Sports,Adventure,1084,Honda,89990000,Japón,855,3,4,3,4,3,2
+CB1000R,Neo Sports Café,998,Honda,64990000,Japón,830,3,4,3,4,3,2
+CBR1000RR-R Fireblade SP,Super Deportiva,999,Honda,119990000,Japón,831,3,4,3,4,3,2
+Navi,Mini Moto,109,Honda,5990000,India,765,3,4,3,4,3,2
+CB300F Twister,Urbana/Deportiva,293,Honda,19000000,Brasil,780,3,4,3,4,3,2
+NX 200,Adventure,199,Honda,13600000,Brasil,800,3,4,3,4,3,2
+Rebel 500,Cruiser,471,Honda,38000000,Tailandia,690,3,4,3,4,3,2
+CRF450RX,Enduro,449,Honda,47000000,Japón,960,3,4,3,4,3,2
+CRF250R,Motocross,249,Honda,47000000,Japón,957,3,4,3,4,3,2
+CRF250RX,Enduro,249,Honda,45000000,Japón,953,3,4,3,4,3,2
+Ninja 500,Deportiva,451,Kawasaki,38490000,Japón,785,3,4,3,4,3,2
+Ninja ZX-6R,Deportiva,636,Kawasaki,82000000,Japón,830,3,4,3,4,3,2
+Ninja ZX-10R,Deportiva,998,Kawasaki,114990000,Japón,835,3,4,3,4,3,2
+Z400,Naked,399,Kawasaki,33490000,Japón,820,3,4,3,4,3,2
+Z500,Naked,451,Kawasaki,37000000,Japón,784,3,4,3,4,3,2
+Z900,Naked,948,Kawasaki,61990000,Japón,795,3,4,3,4,3,2
+ZH2,Naked,998,Kawasaki,114990000,Japón,830,3,4,3,4,3,2
+KLX140,Motocross,144,Kawasaki,25700000,Japón,800,3,4,3,4,3,2
+KX 250,Motocross,249,Kawasaki,48990000,Japón,945,3,4,3,4,3,2
+Versys 300 ABS,Touring,296,Kawasaki,33490000,Japón,845,3,4,3,4,3,2
+Versys 650,Touring,649,Kawasaki,57990000,Japón,845,3,4,3,4,3,2
+Versys 1000 S,Touring,1043,Kawasaki,79990000,Japón,840,3,4,3,4,3,2
+200 Duke,Naked,199,KTM,18590000,Austria,810,3,4,3,4,3,2
+250 Duke,Naked,249,KTM,23590000,Austria,800,3,4,3,4,3,2
+390 Duke,Naked,373,KTM,31990000,Austria,820,3,4,3,4,3,2
+RC 200,Deportiva,199,KTM,19990000,Austria,820,3,4,3,4,3,2
+390 Adventure,Adventure,373,KTM,34990000,Austria,855,3,4,3,4,3,2
+250 Adventure,Adventure,248,KTM,25990000,Austria,855,3,4,3,4,3,2
+890 Adventure,Adventure,889,KTM,74990000,Austria,830,3,4,3,4,3,2
+1290 Super Adventure S,Adventure,1301,KTM,109990000,Austria,849,3,4,3,4,3,2
+690 Enduro R,Enduro,693,KTM,59990000,Austria,910,3,4,3,4,3,2
+450 SMR,Supermoto,449,KTM,66990000,Austria,890,3,4,3,4,3,2
+250 EXC,Enduro,249,KTM,44905000,Austria,960,3,4,3,4,3,2
+300 EXC,Enduro,293,KTM,53830000,Austria,960,3,4,3,4,3,2
+NKD 125,Urbana,124,AKT,5990000,Colombia,780,3,4,3,4,3,2
+CR5 180,Urbana,175,AKT,8290000,Colombia,800,3,4,3,4,3,2
+TTR 125,Doble Propósito,124,AKT,6990000,Colombia,820,3,4,3,4,3,2
+TTR 180,Doble Propósito,175,AKT,8990000,Colombia,840,3,4,3,4,3,2
+CR5 200,Urbana/Deportiva,197,AKT,9490000,Colombia,800,3,4,3,4,3,2
+Dynamic Pro,Scooter,125,AKT,6790000,Colombia,770,3,4,3,4,3,2
+Jet 125,Scooter,124,AKT,6490000,Colombia,760,3,4,3,4,3,2
+Special 110,Urbana/Trabajo,107,AKT,5490000,Colombia,780,3,4,3,4,3,2
+Evo R3 125,Urbana/Naked,124,AKT,6790000,Colombia,790,3,4,3,4,3,2
+Adventure X 250,Adventure,249,AKT,14990000,Colombia,830,3,4,3,4,3,2
+RTX 300,Adventure,292,AKT,17990000,Colombia,820,3,4,3,4,3,2
+TT Dual 200,Doble Propósito,197,AKT,9990000,Colombia,860,3,4,3,4,3,2
+Eco Deluxe,Urbana,97,Hero,4790000,India,785,3,4,3,4,3,2
+Splendor+,Urbana,97,Hero,5290000,India,785,3,4,3,4,3,2
+Passion XPRO 110,Urbana,113,Hero,5990000,India,795,3,4,3,4,3,2
+Glamour XTEC,Urbana,124,Hero,7190000,India,798,3,4,3,4,3,2
+Xpulse 200 4V,Doble Propósito,199,Hero,9990000,India,823,3,4,3,4,3,2
+Xpulse 200T 4V,Adventure,199,Hero,9790000,India,810,3,4,3,4,3,2
+Xtreme 160R,Deportiva,163,Hero,8990000,India,790,3,4,3,4,3,2
+Xtreme 200S,Deportiva Carenada,199,Hero,9990000,India,795,3,4,3,4,3,2
+Karizma XMR,Deportiva,210,Hero,12990000,India,805,3,4,3,4,3,2
+HF Deluxe,Urbana,97,Hero,4590000,India,805,3,4,3,4,3,2
+Hunk 160R,Urbana,163,Hero,9290000,India,790,3,4,3,4,3,2
+Boxer CT 100 ES,Urbana,99,Bajaj,4999000,India,785,3,4,3,4,3,2
+Boxer CT 125,Urbana,124,Bajaj,5799000,India,807,3,4,3,4,3,2
+Discover 125+,Urbana,124,Bajaj,6499000,India,805,3,4,3,4,3,2
+Discover 150,Urbana,144,Bajaj,7299000,India,825,3,4,3,4,3,2
+Platina 100,Urbana,102,Bajaj,5299000,India,807,3,4,3,4,3,2
+Platina 110,Urbana,115,Bajaj,5999000,India,807,3,4,3,4,3,2
+Dominar 400,Touring,373,Bajaj,17999000,India,815,3,4,3,4,3,2
+Dominar 250,Touring,248,Bajaj,13999000,India,800,3,4,3,4,3,2
+Avenger Street 160,Cruiser,160,Bajaj,8999000,India,737,3,4,3,4,3,2
+Avenger Cruise 220,Cruiser,220,Bajaj,10499000,India,725,3,4,3,4,3,2
+Pulsar 150,Urbana,149,Bajaj,7499000,India,785,3,4,3,4,3,2
+Pulsar 180,Urbana,178,Bajaj,8499000,India,790,3,4,3,4,3,2
+Pulsar NS 160,Urbana,160,Bajaj,8999000,India,805,3,4,3,4,3,2
+Pulsar NS 200,Urbana,199,Bajaj,10499000,India,807,3,4,3,4,3,2
+Pulsar RS 200,Deportiva,199,Bajaj,11999000,India,810,3,4,3,4,3,2
+Pulsar N 250,Urbana,249,Bajaj,12999000,India,800,3,4,3,4,3,2
+Pulsar 160 NS FI ABS,Urbana,160,Bajaj,9799000,India,805,3,4,3,4,3,2
+Pulsar 200 NS FI ABS,Urbana,199,Bajaj,11299000,India,807,3,4,3,4,3,2
+Victory MRX 125,Enduro,125,Victory,8689000,Colombia,870,3,4,3,4,3,2
+Victory MRX 125 Trakku,Enduro,125,Victory,8789000,Colombia,870,3,4,3,4,3,2
+Victory MRX 125 S,Enduro,125,Victory,8589000,Colombia,870,3,4,3,4,3,2
+Victory MRX 125 Pro Trakku,Enduro,125,Victory,8899000,Colombia,870,3,4,3,4,3,2
+Victory MRX 150,Enduro,149,Victory,9190000,Colombia,870,3,4,3,4,3,2
+Victory MRX 150 Trakku,Enduro,149,Victory,9390000,Colombia,870,3,4,3,4,3,2
+Victory MRX 150 Pro Trakku,Enduro,149,Victory,9700000,Colombia,870,3,4,3,4,3,2
+Victory MRX 200,Enduro,200,Victory,11090000,Colombia,870,3,4,3,4,3,2
+Victory MRX Arizona,Enduro,200,Victory,11590000,Colombia,870,3,4,3,4,3,2
+Victory New Life,Scooter,125,Victory,7349000,Colombia,760,3,4,3,4,3,2
+Victory New Life Trakku,Scooter,125,Victory,7549000,Colombia,760,3,4,3,4,3,2
+Victory New Life Urban,Scooter,125,Victory,8040000,Colombia,760,3,4,3,4,3,2
+Victory Hunter 150,Scooter,150,Victory,8199000,Colombia,760,3,4,3,4,3,2
+Victory Bomber 125,Scooter,125,Victory,5449000,Colombia,760,3,4,3,4,3,2
+Victory Nitro 125,Scooter,125,Victory,6549000,Colombia,760,3,4,3,4,3,2
+Victory Switch 150 Trakku,Scooter,150,Victory,8399000,Colombia,760,3,4,3,4,3,2
+Victory Combat 100,Scooter,100,Victory,4990000,Colombia,760,3,4,3,4,3,2
+Victory One MP,Urbana,110,Victory,5449000,Colombia,760,3,4,3,4,3,2
+Victory One MP Trakku,Urbana,110,Victory,5649000,Colombia,760,3,4,3,4,3,2
+Victory Advance R 125,Urbana,125,Victory,6199000,Colombia,760,3,4,3,4,3,2
+Victory Advance R 125 Trakku,Urbana,125,Victory,6399000,Colombia,760,3,4,3,4,3,2
+Victory Advance X1,Urbana,125,Victory,7099000,Colombia,760,3,4,3,4,3,2
+Victory Venom 14,Urbana,150,Victory,7949000,Colombia,760,3,4,3,4,3,2
+Victory Venom 18,Urbana,150,Victory,8749000,Colombia,760,3,4,3,4,3,2
+Victory Venom 250S,Urbana,250,Victory,8999000,Colombia,760,3,4,3,4,3,2
+Victory Zontes 155 U,Naked,155,Zontes,11499000,China,760,3,4,3,4,3,2
+Victory Zontes 350 GK,Naked,348,Zontes,19990000,China,760,3,4,3,4,3,2
+Victory Zontes 350 R1,Naked,348,Zontes,20990000,China,760,3,4,3,4,3,2
+Victory Zontes 350 T1,Adventure,348,Zontes,22990000,China,760,3,4,3,4,3,2
+Victory Zontes 350 X1,Adventure,348,Zontes,22990000,China,760,3,4,3,4,3,2
+Victory Zontes 350 T2,Adventure,348,Zontes,24990000,China,760,3,4,3,4,3,2
+Victory Zontes 310 M,Adventure,312,Zontes,23990000,China,760,3,4,3,4,3,2
+250NK FUN,Naked,249,CFMOTO,15590000,China,795,3,4,3,4,3,2
+300NK,Naked,292,CFMOTO,23990000,China,795,3,4,3,4,3,2
+450NK,Naked,449,CFMOTO,26990000,China,795,3,4,3,4,3,2
+675NK,Naked,675,CFMOTO,49990000,China,795,3,4,3,4,3,2
+800NK Normal,Naked,799,CFMOTO,42990000,China,795,3,4,3,4,3,2
+800NK High,Naked,799,CFMOTO,44990000,China,795,3,4,3,4,3,2
+250SR FUN,Deportiva,249,CFMOTO,17590000,China,795,3,4,3,4,3,2
+300SR,Deportiva,292,CFMOTO,24990000,China,795,3,4,3,4,3,2
+300SR-S,Deportiva,292,CFMOTO,24990000,China,795,3,4,3,4,3,2
+450SR,Deportiva,449,CFMOTO,31990000,China,795,3,4,3,4,3,2
+450SR S,Deportiva,449,CFMOTO,35990000,China,795,3,4,3,4,3,2
+675SR-R,Deportiva,675,CFMOTO,52990000,China,795,3,4,3,4,3,2
+250CLX Cruiser,,249,CFMOTO,15990000,China,795,3,4,3,4,3,2
+300CLX Cruiser,Cruiser,292,CFMOTO,18990000,China,795,3,4,3,4,3,2
+450CLC Cruiser,Cruiser,449,CFMOTO,32990000,China,795,3,4,3,4,3,2
+450CLC Bobber,Cruiser,449,CFMOTO,33990000,China,795,3,4,3,4,3,2
+700CLX-H,Cruiser,693,CFMOTO,39990000,China,795,3,4,3,4,3,2
+700CLX-S,Cruiser,693,CFMOTO,35990000,China,795,3,4,3,4,3,2
+700CLX-A,Cruiser,693,CFMOTO,39990000,China,795,3,4,3,4,3,2
+450MT FP Xtreme,Adventure Touring,449,CFMOTO,39990000,China,795,3,4,3,4,3,2
+700MT,Adventure Touring,693,CFMOTO,41990000,China,795,3,4,3,4,3,2
+800MT Sport,Adventure Touring,799,CFMOTO,59990000,China,795,3,4,3,4,3,2
+800MT-X,Adventure Touring,799,CFMOTO,59990000,China,795,3,4,3,4,3,2
+800MT Explore,Adventure Touring,799,CFMOTO,64990000,China,795,3,4,3,4,3,2
+Crox 125 Euro 3 mod 2025,Scooter,125,SYM,7499000,China,760,3,4,3,4,3,2
+Crox 125 Euro 3 mod 2026,Scooter,125,SYM,7999000,China,760,3,4,3,4,3,2
+New Angel 125 EFi mod 2024,Scooter,125,SYM,5799000,China,760,3,4,3,4,3,2
+Crox Rx 150 mod 2024,Scooter,149,SYM,9999000,China,760,3,4,3,4,3,2
+NHX 190i mod 2024,doble Propósito,183,SYM,9999000,China,760,3,4,3,4,3,2
+NH-TRAZER 190i Mod 2025,Motocross,183,SYM,13999000,China,760,3,4,3,4,3,2
+NH-TRAZER 300i Mod 2025,Motocross,278,SYM,18599000,China,760,3,4,3,4,3,2
+Joyride 300i Mod 2025,Scooter,278,SYM,24999000,China,760,3,4,3,4,3,2
+ADXTG 150,Scooter,150,SYM,14790000,China,760,3,4,3,4,3,2
+Apache RTR 160 4V,Urbana,160,TVS,8990000,India,800,3,4,3,4,3,2
+Apache RTR 200 4V,Urbana,198,TVS,10990000,India,800,3,4,3,4,3,2
+Raider 125,Urbana,125,TVS,7490000,India,780,3,4,3,4,3,2
+Ntorq 125,Scooter,125,TVS,8490000,India,770,3,4,3,4,3,2
+Sport 100 ES,Urbana,100,TVS,4990000,India,785,3,4,3,4,3,2
+Apache RR 310,Deportiva,312,TVS,21990000,India,810,3,4,3,4,3,2
+Jupiter,Scooter,110,TVS,6990000,India,765,3,4,3,4,3,2
+Meteor 350,Cruiser,349,Royal Enfield,17790000,India,765,3,4,3,4,3,2
+HNTR 350,Cruiser,349,Royal Enfield,14990000,India,765,3,4,3,4,3,2
+Classic 350,Cruiser,349,Royal Enfield,17490000,India,765,3,4,3,4,3,2
+New Himalayan 450,Adventure,452,Royal Enfield,25990000,India,800,3,4,3,4,3,2
+Interceptor 650,Cruiser,648,Royal Enfield,30990000,India,804,3,4,3,4,3,2
+Continental GT 650,Cruiser,648,Royal Enfield,31490000,India,804,3,4,3,4,3,2
+Shotgun 650,Cruiser,648,Royal Enfield,33490000,India,804,3,4,3,4,3,2
+Super Meteor 650,Cruiser,648,Royal Enfield,34990000,India,804,3,4,3,4,3,2
+Panigale V4 R,Deportiva,998,Ducati,190990000,Italia,850,3,4,3,4,3,2
+Panigale V4,Deportiva,1103,Ducati,125990000,Italia,840,3,4,3,4,3,2
+Panigale V2,Deportiva,955,Ducati,110990000,Italia,840,3,4,3,4,3,2
+Panigale V2 Bayliss,Deportiva,955,Ducati,115990000,Italia,835,3,4,3,4,3,2
+Streetfighter V4 SP2,Deportiva Naked,1103,Ducati,169990000,Italia,845,3,4,3,4,3,2
+Streetfighter V4 S,Deportiva Naked,1103,Ducati,145990000,Italia,845,3,4,3,4,3,2
+Diavel V4,Power Cruiser,1158,Ducati,145990000,Italia,790,3,4,3,4,3,2
+SuperSport 950 S,Sport Turismo,937,Ducati,79990000,Italia,810,3,4,3,4,3,2
+Monster SP,Naked,937,Ducati,69990000,Italia,810,3,4,3,4,3,2
+Monster,Naked,937,Ducati,59990000,Italia,820,3,4,3,4,3,2
+Hypermotard 950 SP,Trail,937,Ducati,89990000,Italia,870,3,4,3,4,3,2
+Hypermotard 950 RVE,Trail,937,Ducati,84990000,Italia,870,3,4,3,4,3,2
+Hypermotard 950,Trail,937,Ducati,79990000,Italia,870,3,4,3,4,3,2
+Multistrada V4S Grand Tour,Adventure,1103,Ducati,129990000,Italia,840,3,4,3,4,3,2
+Multistrada V4 RS,Adventure,1103,Ducati,139990000,Italia,840,3,4,3,4,3,2
+Multistrada V4 Rally,Adventure,1158,Ducati,149990000,Italia,840,3,4,3,4,3,2
+Multistrada V4 S,Adventure,1158,Ducati,119990000,Italia,840,3,4,3,4,3,2
+Multistrada V2 S,Adventure,937,Ducati,99990000,Italia,830,3,4,3,4,3,2
+DesertX Rally,Adventure,937,Ducati,89990000,Italia,910,3,4,3,4,3,2
+DesertX,Adventure,937,Ducati,79990000,Italia,875,3,4,3,4,3,2
+Scrambler Icon,Retro,803,Ducati,59990000,Italia,795,3,4,3,4,3,2
+Scrambler Full Throttle,Retro,803,Ducati,64990000,Italia,795,3,4,3,4,3,2
+Scrambler Nightshift,Retro,803,Ducati,64990000,Italia,795,3,4,3,4,3,2
+Svartpilen 200,Urbana,199,Husqvarna,19990000,Suecia,835,2,3,4,3,3,3
+Svartpilen 401,Scrambler,373,Husqvarna,29990000,Suecia,835,2,3,4,3,4,3
+Svartpilen 701,Scrambler,693,Husqvarna,46990000,Suecia,835,2,3,5,4,3,4
+Vitpilen 701,Café Racer,693,Husqvarna,46990000,Suecia,830,2,3,5,4,3,4
+701 Enduro,Enduro,693,Husqvarna,51990000,Suecia,925,2,3,4,4,3,4
+701 Supermoto,Supermoto,693,Husqvarna,63990000,Suecia,890,2,3,5,4,3,4
+Norden 901,Aventura,889,Husqvarna,75000000,Suecia,854,2,3,5,4,3,5
+Street Bob 114,Cruiser,1868,Harley-Davidson,112990000,Estados Unidos,680,2,4,4,4,3,4
+Fat Boy 114,Cruiser,1868,Harley-Davidson,136990000,Estados Unidos,675,2,4,5,4,4,4
+Breakout 117,Cruiser,1923,Harley-Davidson,139990000,Estados Unidos,665,2,4,5,4,3,5
+Sportster S,Sport,1252,Harley-Davidson,115990000,Estados Unidos,755,3,4,4,4,4,4
+Nightster Special,Sport,975,Harley-Davidson,94990000,Estados Unidos,705,3,4,4,4,3,3
+Pan America 1250 Special,Aventura,1250,Harley-Davidson,94990000,Estados Unidos,850,3,4,4,4,3,4
+Street Glide,Touring,1868,Harley-Davidson,159990000,Estados Unidos,690,2,4,5,4,4,5
+CVO Street Glide,Touring,1977,Harley-Davidson,299990000,Estados Unidos,690,1,5,5,5,3,5
+RS 457,Deportiva,457,Aprilia,43990000,Italia,820,3,4,5,4,4,4
+RS 660,Deportiva,660,Aprilia,69990000,Italia,820,2,4,5,4,3,4
+Tuono 660,Naked,660,Aprilia,59990000,Italia,820,2,4,5,4,3,4
+Tuono 660 Factory,Naked,660,Aprilia,69990000,Italia,820,2,4,5,4,3,4
+Tuareg 660,Aventura,660,Aprilia,71990000,Italia,860,2,4,5,4,3,4
+Tuono V4 1100,Naked,1077,Aprilia,99990000,Italia,825,1,4,5,4,3,5
+RSV4 1100,Deportiva,1099,Aprilia,119990000,Italia,825,1,4,5,4,3,5
+RSV4 Factory,Deportiva,1099,Aprilia,129990000,Italia,825,1,4,5,4,3,5
+SXR 160,Scooter,160,Aprilia,12990000,Italia,775,4,4,4,4,3,3
+SR GT 200,Scooter,174,Aprilia,14990000,Italia,790,4,4,4,4,3,3
+TNT 135,Mini Naked,135,Benelli,8990000,Italia,780,4,3,4,3,3,2
+180S,Naked,175,Benelli,10599000,Italia,810,4,3,4,3,4,2
+180S ABS,Naked,175,Benelli,11599000,Italia,810,4,3,4,3,4,2
+302S,Naked,300,Benelli,24990000,Italia,795,3,3,4,3,3,3
+Leoncino 250,Scrambler,250,Benelli,16990000,Italia,810,3,3,4,3,3,3
+Leoncino 500,Scrambler,500,Benelli,29990000,Italia,815,3,3,4,3,3,3
+Leoncino 500 Trail,Scrambler,500,Benelli,36590000,Italia,835,3,3,4,3,3,3
+Leoncino 800,Scrambler,754,Benelli,46990000,Italia,805,2,3,4,3,2,4
+Leoncino 800 Trail,Scrambler,754,Benelli,49450000,Italia,825,2,3,4,3,2,4
+Imperiale 400,Clásica,374,Benelli,15990000,Italia,780,4,4,4,4,3,3
+TRK 251,Aventura,250,Benelli,13900000,Italia,800,3,3,4,3,4,3
+TRK 502,Aventura,500,Benelli,33990000,Italia,835,3,3,4,3,4,3
+TRK 502 X,Aventura,500,Benelli,36990000,Italia,850,3,3,4,3,4,3
+TRK 702,Aventura,693,Benelli,49900000,Italia,850,2,3,4,3,3,4
+TRK 702 X,Aventura,693,Benelli,52900000,Italia,860,2,3,4,3,3,4
+502C,Cruiser,500,Benelli,29900000,Italia,750,3,3,4,3,3,3
+G 310 GS,Aventura,313,BMW,29990000,Alemania,835,3,4,4,4,4,3
+F 900 XR,Aventura,895,BMW,69990000,Alemania,825,2,4,4,4,3,4
+R 1300 GS,Aventura,1300,BMW,99990000,Alemania,850,2,5,5,5,5,5
+R 1250 RT,Touring,1254,BMW,155990000,Alemania,805,2,5,5,5,4,5
+K 1600 GTL,Touring,1649,BMW,179990000,Alemania,750,1,5,5,5,3,5
+S 1000 XR,Deportiva,999,BMW,89990000,Alemania,840,2,4,5,4,4,4
+R 12 nineT,Cruiser,1170,BMW,102990000,Alemania,805,2,4,5,4,3,4
+R 18 Classic,Cruiser,1802,BMW,119990000,Alemania,705,2,4,5,4,3,5
+C 400 GT,Scooter,350,BMW,49990000,Alemania,775,3,4,4,4,3,3
+CE 04,Eléctrica,0,BMW,74990000,Alemania,780,3,4,5,4,2,4
