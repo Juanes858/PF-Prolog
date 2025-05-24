@@ -1,9 +1,59 @@
+# interface.py: Interfaz Python-Prolog para el sistema experto de motos
+# ------------------------------------------------------
+# Este archivo define la clase Interface, que gestiona la comunicación entre Python y Prolog.
+# Permite cargar la base de conocimiento desde un archivo CSV y realizar consultas a Prolog
+# desde Python. Cada método está documentado para explicar su propósito y funcionamiento.
+#
+# Funciones principales:
+# - cargar_base_conocimiento: carga los datos del CSV a Prolog
+# - consultar_por_pais: consulta motos por país en Prolog
+# - consultar_por_precio: consulta motos por rango de precio en Prolog
+# - consultar_por_cilindraje: consulta motos por rango de cilindraje en Prolog
+# - consultar_por_altura: consulta motos por altura mínima en Prolog
+#
+# Esta interfaz permite la integración fluida entre la lógica de Prolog y la GUI de Python.
+
+# interface.py
+# Interfaz entre Python y Prolog. Se encarga de cargar la base de conocimiento y ejecutar consultas.
+# Utiliza pyswip para interactuar con Prolog.
+
 from pyswip import Prolog
+import csv
 
 class PrologEngine:
-    def __init__(self, path="motor.pl"):
+    def __init__(self):
+        # Inicializa el motor Prolog y carga el archivo de reglas
         self.prolog = Prolog()
-        self.prolog.consult(path)
+        self.prolog.consult('motor.pl')
+
+    def cargar_datos(self):
+        # Carga los datos del archivo CSV a la base de conocimiento Prolog
+        with open('BaseConocimiento.csv', encoding='utf-8') as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                # Construye el hecho Prolog para cada moto
+                hecho = f"moto('{row['N']}', '{row['P']}', {row['C']}, {row['A']}, '{row['Pa']}', '{row['E']}', '{row['Es']}', '{row['Ex']}')."
+                self.prolog.assertz(hecho)
+
+    def consultar_por_pais(self, pais):
+        # Consulta motos por país
+        consulta = f"moto(N, P, C, A, '{pais}', E, Es, Ex)"
+        return list(self.prolog.query(consulta))
+
+    def consultar_por_precio(self, min_precio, max_precio):
+        # Consulta motos por rango de precio
+        consulta = f"moto(N, P, C, A, Pa, E, Es, Ex), P >= {min_precio}, P =< {max_precio}"
+        return list(self.prolog.query(consulta))
+
+    def consultar_por_cilindraje(self, min_cilindraje, max_cilindraje):
+        # Consulta motos por rango de cilindraje
+        consulta = f"moto(N, P, C, A, Pa, E, Es, Ex), C >= {min_cilindraje}, C =< {max_cilindraje}"
+        return list(self.prolog.query(consulta))
+
+    def consultar_por_altura(self, min_altura):
+        # Consulta motos por altura mínima
+        consulta = f"moto(N, P, C, A, Pa, E, Es, Ex), A > {min_altura}"
+        return list(self.prolog.query(consulta))
 
     def cargar_BaseConocimiento(self, data):
         for idx, row in enumerate(data):

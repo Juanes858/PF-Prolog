@@ -1,12 +1,34 @@
+# vista.py: Vista principal del sistema experto de motos
+# ---------------------------------------------------
+# Este archivo define la clase View, que implementa la interfaz gráfica de usuario (GUI)
+# usando Tkinter. Permite realizar consultas y recomendaciones de motos, mostrando los
+# resultados de manera profesional y amigable. Cada método está documentado para facilitar
+# su comprensión y mantenimiento.
+#
+# Componentes principales:
+# - Ventana de inicio: opciones principales (consultas, recomendación)
+# - Ventanas de consulta: permiten buscar motos por país, precio, cilindraje o altura
+# - Ventana de recomendación: cuestionario scrolleable para recomendar motos según preferencias
+# - Métodos auxiliares para mostrar resultados y manejar la interacción
+#
+# Mejoras de usabilidad:
+# - Scroll funcional con mouse
+# - Botones grandes y estéticos
+# - Formularios centrados y presentación profesional
+# - Mensajes de error y confirmación claros
+#
+# Cada método incluye comentarios explicativos sobre su propósito y funcionamiento.
+
 import tkinter as tk
 from tkinter import messagebox
 
 class View:
     def __init__(self, controller=None):
+        # Inicializa la vista y la ventana principal
         self.controller = controller
         self.root = tk.Tk()
         self.root.title("Sistema Experto de Compras de Motos")
-        # Hacer la ventana principal maximizada o de buen tamaño
+        # Intenta maximizar la ventana principal
         try:
             self.root.state('zoomed')  # Pantalla completa en Windows
         except Exception:
@@ -16,12 +38,13 @@ class View:
         # Cargar datos al iniciar la aplicación
         try:
             if self.controller:
-                self.controller.cargar_datos()  # Llama al método del controller
+                self.controller.cargar_datos()  # Llama al método del controller para cargar la base de conocimiento
         except Exception as e:
             messagebox.showerror("Error al cargar datos", str(e))
         self.mostrar_ventana_inicio()
 
     def mostrar_ventana_inicio(self):
+        # Muestra la ventana de inicio con las opciones principales
         if self.ventana_actual:
             self.ventana_actual.destroy()
         self.ventana_actual = tk.Frame(self.root)
@@ -31,13 +54,13 @@ class View:
         tk.Button(self.ventana_actual, text="Moto recomendada", width=20, command=self.mostrar_ventana_recomendacion).pack(pady=10)
 
     def mostrar_ventana_consultas(self):
+        # Muestra la ventana para realizar consultas personalizadas
         if self.ventana_actual:
             self.ventana_actual.destroy()
         self.ventana_actual = tk.Frame(self.root)
         self.ventana_actual.pack(fill="both", expand=True)
         tk.Label(self.ventana_actual, text="Consultas de motos", font=("Arial", 14)).pack(pady=10)
 
-        # --- Campos para consultas organizados en LabelFrames y usando grid ---
         # Consulta por país
         frame_pais = tk.LabelFrame(self.ventana_actual, text="Por país", padx=10, pady=5)
         frame_pais.pack(fill="x", padx=10, pady=5)
@@ -85,6 +108,7 @@ class View:
         tk.Button(self.ventana_actual, text="Regresar", command=self.mostrar_ventana_inicio).pack(pady=20)
 
     def mostrar_ventana_recomendacion(self):
+        # Muestra la ventana del cuestionario para recomendación de moto
         if self.ventana_actual:
             self.ventana_actual.destroy()
         self.ventana_actual = tk.Frame(self.root)
@@ -93,7 +117,7 @@ class View:
         tk.Button(self.ventana_actual, text="Regresar", command=self.mostrar_ventana_inicio).pack(pady=20)
 
     def crear_interfaz(self, parent=None):
-        # --- Frame scrolleable para el cuestionario ---
+        # Crea el formulario scrolleable para el cuestionario de recomendación
         frame = parent if parent else self.root
         canvas = tk.Canvas(frame, borderwidth=0, highlightthickness=0)
         scrollbar = tk.Scrollbar(frame, orient="vertical", command=canvas.yview)
@@ -109,19 +133,18 @@ class View:
         canvas.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
 
-        # Habilitar scroll con la rueda del mouse
+        # Habilita el scroll con la rueda del mouse
         def _on_mousewheel(event):
             if event.num == 5 or event.delta == -120:
                 canvas.yview_scroll(1, "units")
             elif event.num == 4 or event.delta == 120:
                 canvas.yview_scroll(-1, "units")
-        # Windows y Mac usan <MouseWheel>, Linux usa <Button-4/5>
         canvas.bind_all("<MouseWheel>", _on_mousewheel)
         canvas.bind_all("<Button-4>", _on_mousewheel)
         canvas.bind_all("<Button-5>", _on_mousewheel)
 
-        # --- Agrupar cada sección del cuestionario en LabelFrames y usar grid para estética ---
-        # Nombre
+        # --- Secciones del cuestionario ---
+        # Nombre del usuario
         lf_nombre = tk.LabelFrame(scrollable_frame, text="Datos del usuario", padx=10, pady=5)
         lf_nombre.pack(fill="x", padx=10, pady=5)
         tk.Label(lf_nombre, text="¿Cuál es su nombre?").grid(row=0, column=0, sticky="w")
@@ -156,7 +179,7 @@ class View:
         self.otro_entry.grid(row=len(opciones)+1, column=0, sticky="w", pady=2)
         self.otro_entry.bind("<KeyRelease>", lambda e: self.mostrar_motos_presupuesto())
 
-        # Usos
+        # Usos principales
         lf_usos = tk.LabelFrame(scrollable_frame, text="Uso principal", padx=10, pady=5)
         lf_usos.pack(fill="x", padx=10, pady=5)
         tk.Label(lf_usos, text="¿Para qué vas a usar principalmente la moto? (Puedes seleccionar múltiples opciones)").grid(row=0, column=0, sticky="w")
@@ -174,7 +197,7 @@ class View:
             tk.Checkbutton(lf_usos, text=uso, variable=var).grid(row=i+1, column=0, sticky="w")
             self.usos_vars.append(var)
 
-        # Ahorro combustible
+        # Ahorro de combustible
         lf_ahorro = tk.LabelFrame(scrollable_frame, text="Ahorro de combustible", padx=10, pady=5)
         lf_ahorro.pack(fill="x", padx=10, pady=5)
         tk.Label(lf_ahorro, text="¿Qué tan importante es para ti el ahorro de combustible? (1-5)").grid(row=0, column=0, sticky="w")
@@ -182,7 +205,7 @@ class View:
         for i in range(1, 6):
             tk.Radiobutton(lf_ahorro, text=str(i), variable=self.ahorro_combustible_var, value=i).grid(row=0, column=i, sticky="w")
 
-        # Economía repuestos
+        # Economía en repuestos
         lf_economia = tk.LabelFrame(scrollable_frame, text="Economía en repuestos", padx=10, pady=5)
         lf_economia.pack(fill="x", padx=10, pady=5)
         tk.Label(lf_economia, text="¿Qué tan importante es la economía en repuestos? (1-5)").grid(row=0, column=0, sticky="w")
@@ -190,7 +213,7 @@ class View:
         for i in range(1, 6):
             tk.Radiobutton(lf_economia, text=str(i), variable=self.economia_repuestos_var, value=i).grid(row=0, column=i, sticky="w")
 
-        # Estilo
+        # Estilo de moto
         lf_estilo = tk.LabelFrame(scrollable_frame, text="Estilo de moto", padx=10, pady=5)
         lf_estilo.pack(fill="x", padx=10, pady=5)
         tk.Label(lf_estilo, text="¿Prefieres un estilo de moto más clásico o moderno?").grid(row=0, column=0, sticky="w")
@@ -214,13 +237,13 @@ class View:
         for i in range(1, 6):
             tk.Radiobutton(lf_exclusividad, text=str(i), variable=self.exclusividad_var, value=i).grid(row=0, column=i, sticky="w")
 
-        # Botones
+        # Botones de acción
         frame_botones = tk.Frame(scrollable_frame)
         frame_botones.pack(fill="x", padx=10, pady=10)
         tk.Button(frame_botones, text="Enviar", command=self.enviar_respuestas).grid(row=0, column=0, padx=5)
 
     def enviar_respuestas(self):
-        # Guardar las respuestas del usuario en una variable para uso posterior
+        # Procesa y muestra la recomendación de motos según las respuestas del usuario
         self.respuestas_usuario = {
             'nombre': self.nombre_entry.get(),
             'presupuesto': self.presupuesto_var.get(),
@@ -232,7 +255,7 @@ class View:
             'estetica': self.estetica_var.get(),
             'exclusividad': self.exclusividad_var.get()
         }
-        # Mostrar resultados de motos por presupuesto en una ventana nueva
+        # Determina el rango de precio según la selección
         seleccion = self.presupuesto_var.get()
         rangos = {
             "Menos de $8.000.000": (0, 8000000),
@@ -261,7 +284,7 @@ class View:
                 )
             else:
                 resultado_texto = "No se encontraron motos en ese rango de precio."
-            # Mostrar en ventana nueva
+            # Muestra los resultados en una ventana nueva
             resultado_win = tk.Toplevel(self.root)
             resultado_win.title("Resultados de motos por presupuesto")
             tk.Label(resultado_win, text="Motos encontradas:").pack(anchor="w")
@@ -272,12 +295,14 @@ class View:
         messagebox.showinfo("Información", "Respuestas guardadas con éxito.")
 
     def consulta_pais(self):
+        # Consulta motos por país
         pais = self.pais_entry.get()
         if self.controller:
             resultados = self.controller.get_motos_pais(pais)
             self.mostrar_resultados_consulta(resultados, f"Motos de {pais}")
 
     def consulta_precio(self):
+        # Consulta motos por rango de precio
         try:
             x = int(self.precio_min_entry.get())
             y = int(self.precio_max_entry.get())
@@ -289,6 +314,7 @@ class View:
             self.mostrar_resultados_consulta(resultados, f"Motos entre ${x:,} y ${y:,}")
 
     def consulta_cilindraje(self):
+        # Consulta motos por rango de cilindraje
         try:
             x = int(self.cilindraje_min_entry.get())
             y = int(self.cilindraje_max_entry.get())
@@ -300,6 +326,7 @@ class View:
             self.mostrar_resultados_consulta(resultados, f"Motos con cilindraje entre {x} y {y}")
 
     def consulta_altura(self):
+        # Consulta motos por altura mínima
         try:
             x = int(self.altura_min_entry.get())
         except ValueError:
@@ -310,6 +337,7 @@ class View:
             self.mostrar_resultados_consulta(resultados, f"Motos con altura mayor a {x}")
 
     def mostrar_resultados_consulta(self, resultados, titulo):
+        # Muestra los resultados de cualquier consulta en una ventana nueva
         if resultados:
             texto = '\n'.join(
                 r.get('N', str(r)).decode() if isinstance(r.get('N', str(r)), bytes) else str(r.get('N', str(r)))
@@ -326,5 +354,5 @@ class View:
         text_widget.config(state="disabled")
 
     def iniciar(self):
-        # Solo inicia el mainloop, la ventana inicial ya se muestra en __init__
+        # Inicia el bucle principal de la aplicación
         self.root.mainloop()
