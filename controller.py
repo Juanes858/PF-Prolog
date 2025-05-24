@@ -43,18 +43,6 @@ class Controller:
     def mostrar_equipo_y_goles(self):
        return self.engine.mostrar_equipo_y_goles()
     
-    def mostrar_motos_en_rango_precio(self, precio_max=8000000, precio_min=0):
-        # Llama al método correcto de PrologEngine para obtener motos con precio menor a precio_max
-        resultados = self.engine.motos_menor_precio(precio_max)
-        if resultados:
-            mensaje = '\n'.join([
-                f"{m['Nombre']} | {m['Marca']} | {m['Precio']}" for m in resultados
-            ])
-        else:
-            mensaje = f"No se encontraron motos con precio menor a ${precio_max:,}."
-        from tkinter import messagebox
-        messagebox.showinfo("Motos económicas", mensaje)
-
     def get_marcas(self):
         return self.engine.get_marcas()
 

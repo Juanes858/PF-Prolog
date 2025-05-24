@@ -2,7 +2,7 @@ from controller import Controller
 from vista import View
 
 if __name__ == "__main__":
-    view = View(None)
-    controller = Controller(view)
+    controller = Controller(None)
+    view = View(controller)
     view.controller = controller
     view.iniciar()
