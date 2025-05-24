@@ -32,13 +32,13 @@ class View:
 
         for opcion in opciones:
             tk.Radiobutton(
-            self.root, text=opcion, variable=self.presupuesto_var, value=opcion,
-            command=on_presupuesto_change
+                self.root, text=opcion, variable=self.presupuesto_var, value=opcion,
+                command=on_presupuesto_change
             ).pack(anchor="w")
 
         self.otro_entry = tk.Entry(self.root, state="disabled")
         self.otro_entry.pack(anchor="w")
-
+        self.otro_entry.bind("<KeyRelease>", lambda e: self.mostrar_motos_presupuesto())
 
         tk.Label(self.root, text="¿Para qué vas a usar principalmente la moto? (Puedes seleccionar múltiples opciones)").pack(anchor="w")
         self.usos_vars = []
@@ -105,6 +105,43 @@ class View:
             'estetica': self.estetica_var.get(),
             'exclusividad': self.exclusividad_var.get()
         }
+        # Mostrar resultados de motos por presupuesto en una ventana nueva
+        seleccion = self.presupuesto_var.get()
+        rangos = {
+            "Menos de $8.000.000": (0, 8000000),
+            "Entre $8.000.000 y $12.000.000": (8000000, 12000000),
+            "Entre $12.000.000 y $20.000.000": (12000000, 20000000),
+            "Entre $20.000.000 y $50.000.000": (20000000, 50000000),
+            "Más de $50.000.000": (50000000, 1000000000)
+        }
+        if seleccion == "Otro":
+            try:
+                valor = int(self.otro_entry.get().replace(".", "").replace(",", ""))
+                x = max(0, valor - 2000000)
+                y = valor + 2000000
+            except ValueError:
+                messagebox.showinfo("Resultados", "Ingrese un valor válido para el presupuesto.")
+                return
+        else:
+            x, y = rangos[seleccion]
+
+        if self.controller:
+            motos = self.controller.get_motos_entre_precio(x, y)
+            if motos:
+                resultado_texto = '\n'.join(
+                    moto.get('N', str(moto)).decode() if isinstance(moto.get('N', str(moto)), bytes) else str(moto.get('N', str(moto)))
+                    for moto in motos
+                )
+            else:
+                resultado_texto = "No se encontraron motos en ese rango de precio."
+            # Mostrar en ventana nueva
+            resultado_win = tk.Toplevel(self.root)
+            resultado_win.title("Resultados de motos por presupuesto")
+            tk.Label(resultado_win, text="Motos encontradas:").pack(anchor="w")
+            text_widget = tk.Text(resultado_win, width=80, height=20)
+            text_widget.pack()
+            text_widget.insert(tk.END, resultado_texto)
+            text_widget.config(state="disabled")
         messagebox.showinfo("Información", "Respuestas guardadas con éxito.")
 
     def iniciar(self):
