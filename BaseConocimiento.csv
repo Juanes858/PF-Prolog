@@ -1,4 +1,4 @@
-Nombre,Segmento,Cilindraje (cc),Marca,Precio Aproximado (COP),Pais de la Marca,Altura(mm),Economía en repuestos,Fiabilidad,Estética,Durabilidad,Popularidad,Exclusividad
+Nombre,Segmento,Cilindraje,Marca,Precio,PaisMarca,Altura,Economía,Fiabilidad,Estética,Durabilidad,Popularidad,Exclusividad
 Aerox 155,Scooter,155,Yamaha,14050000,Japón,790,5,4,3,4,4,3
 Crypton FI,Urbana,115,Yamaha,6500000,Japón,775,2,4,5,4,3,1
 NMAX,Scooter,155,Yamaha,13550000,Japón,765,4,4,3,4,5,2
