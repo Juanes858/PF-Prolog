@@ -90,7 +90,7 @@ class View:
 
         tk.Button(self.root, text="Enviar", command=self.enviar_respuestas).pack(anchor="w")
         tk.Button(self.root, text="Cargar Datos", command=self.controller.cargar_datos).pack(anchor="w")
-        tk.Button(self.root, text="Motos < $8.000.000", command=lambda: self.controller.mostrar_motos_menor_precio(8000000)).pack(anchor="w")
+        tk.Button(self.root, text="Motos < $8.000.000", command=lambda: self.controller.mostrar_motos_en_rango_precio(8000000)).pack(anchor="w")
 
     def enviar_respuestas(self):
         # Guardar las respuestas del usuario en una variable para uso posterior
