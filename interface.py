@@ -58,26 +58,39 @@ class PrologEngine:
     def cargar_BaseConocimiento(self, data):
         for idx, row in enumerate(data):
             try:
+                # Convertir campos numéricos a int para asegurar comparaciones numéricas en Prolog
+                cilindraje = int(row["Cilindraje"])
+                precio = int(row["Precio"])
+                altura = int(row["Altura"])
+                economia = int(row["Economía"])
+                fiabilidad = int(row["Fiabilidad"])
+                estetica = int(row["Estética"])
+                durabilidad = int(row["Durabilidad"])
+                popularidad = int(row["Popularidad"])
+                exclusividad = int(row["Exclusividad"])
                 cmd = (
                     f'agregar_hecho('
                     f'"{row["Nombre"]}",'
                     f'"{row["Segmento"]}",'
-                    f'{row["Cilindraje"]},'
+                    f'{cilindraje},'
                     f'"{row["Marca"]}",'
-                    f'{row["Precio"]},'
+                    f'{precio},'
                     f'\'{row["PaisMarca"]}\','  # país como átomo
-                    f'{row["Altura"]},'
-                    f'{row["Economía"]},'
-                    f'{row["Fiabilidad"]},'
-                    f'{row["Estética"]},'
-                    f'{row["Durabilidad"]},'
-                    f'{row["Popularidad"]},'
-                    f'{row["Exclusividad"]}'
+                    f'{altura},'
+                    f'{economia},'
+                    f'{fiabilidad},'
+                    f'{estetica},'
+                    f'{durabilidad},'
+                    f'{popularidad},'
+                    f'{exclusividad}'
                     f')'
                 )
                 list(self.prolog.query(cmd))
             except KeyError as e:
                 print(f"Error: clave {e} no encontrada en la fila {idx+1}: {row}")
+                raise
+            except ValueError as e:
+                print(f"Error de conversión en la fila {idx+1}: {row}\n{e}")
                 raise
 
     # def obtener_equipo_con_mas_goles(self):
@@ -160,4 +173,28 @@ class PrologEngine:
     def get_motos_entre_altura(self, x, y):
         print(f"Consultando motos con altura entre {x} y {y}...")
         consulta = f"motos_entre_altura({x}, {y}, N)"
+        return list(self.prolog.query(consulta))
+
+    def consultar_moto_recomendada(self, pais=None, segmento=None, marca=None, cilindraje_min=None, precio_min=None, precio_max=None, altura_min=None):
+        """
+        Consulta recomendaciones de motos según los filtros proporcionados.
+        Los argumentos pueden ser None para no filtrar por ese criterio.
+        """
+        # Prolog: moto_recomendada(Pais, Segmento, Marca, CilindrajeMin, PrecioMin, PrecioMax, AlturaMin, Moto)
+        def prolog_val(val):
+            if val is None:
+                return '_'
+            if isinstance(val, str):
+                return f"'{val}'"
+            return str(val)
+        # Si algún valor numérico es None, pásalo como 0 para evitar instantiation_error en Prolog
+        cilindraje_min_val = cilindraje_min if cilindraje_min is not None else 0
+        precio_min_val = precio_min if precio_min is not None else 0
+        precio_max_val = precio_max if precio_max is not None else 1000000000
+        altura_min_val = altura_min if altura_min is not None else 0
+        consulta = (
+            f"moto_recomendada({prolog_val(pais)}, {prolog_val(segmento)}, {prolog_val(marca)}, "
+            f"{cilindraje_min_val}, {precio_min_val}, {precio_max_val}, {altura_min_val}, M)"
+        )
+        print(f"Consultando recomendación: {consulta}")
         return list(self.prolog.query(consulta))

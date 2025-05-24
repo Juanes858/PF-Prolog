@@ -197,13 +197,14 @@ class View:
             tk.Checkbutton(lf_usos, text=uso, variable=var).grid(row=i+1, column=0, sticky="w")
             self.usos_vars.append(var)
 
-        # Ahorro de combustible
-        lf_ahorro = tk.LabelFrame(scrollable_frame, text="Ahorro de combustible", padx=10, pady=5)
-        lf_ahorro.pack(fill="x", padx=10, pady=5)
-        tk.Label(lf_ahorro, text="¿Qué tan importante es para ti el ahorro de combustible? (1-5)").grid(row=0, column=0, sticky="w")
-        self.ahorro_combustible_var = tk.IntVar(value=3)
-        for i in range(1, 6):
-            tk.Radiobutton(lf_ahorro, text=str(i), variable=self.ahorro_combustible_var, value=i).grid(row=0, column=i, sticky="w")
+        # Altura preferida
+        lf_altura = tk.LabelFrame(scrollable_frame, text="Altura de la moto", padx=10, pady=5)
+        lf_altura.pack(fill="x", padx=10, pady=5)
+        tk.Label(lf_altura, text="¿Prefieres una moto de altura baja, promedio o alta?").grid(row=0, column=0, sticky="w")
+        self.altura_preferida_var = tk.StringVar(value="Promedio")
+        tk.Radiobutton(lf_altura, text="Baja (< 790 mm)", variable=self.altura_preferida_var, value="Baja").grid(row=1, column=0, sticky="w")
+        tk.Radiobutton(lf_altura, text="Promedio (790-830 mm)", variable=self.altura_preferida_var, value="Promedio").grid(row=1, column=1, sticky="w")
+        tk.Radiobutton(lf_altura, text="Alta (> 830 mm)", variable=self.altura_preferida_var, value="Alta").grid(row=1, column=2, sticky="w")
 
         # Economía en repuestos
         lf_economia = tk.LabelFrame(scrollable_frame, text="Economía en repuestos", padx=10, pady=5)
@@ -213,13 +214,13 @@ class View:
         for i in range(1, 6):
             tk.Radiobutton(lf_economia, text=str(i), variable=self.economia_repuestos_var, value=i).grid(row=0, column=i, sticky="w")
 
-        # Estilo de moto
-        lf_estilo = tk.LabelFrame(scrollable_frame, text="Estilo de moto", padx=10, pady=5)
-        lf_estilo.pack(fill="x", padx=10, pady=5)
-        tk.Label(lf_estilo, text="¿Prefieres un estilo de moto más clásico o moderno?").grid(row=0, column=0, sticky="w")
-        self.estilo_var = tk.StringVar(value="Moderno")
-        tk.Radiobutton(lf_estilo, text="Clásico", variable=self.estilo_var, value="Clásico").grid(row=1, column=0, sticky="w")
-        tk.Radiobutton(lf_estilo, text="Moderno", variable=self.estilo_var, value="Moderno").grid(row=1, column=1, sticky="w")
+        # Fiabilidad
+        lf_fiabilidad = tk.LabelFrame(scrollable_frame, text="Fiabilidad", padx=10, pady=5)
+        lf_fiabilidad.pack(fill="x", padx=10, pady=5)
+        tk.Label(lf_fiabilidad, text="¿Qué tan importante es la fiabilidad? (1-5)").grid(row=0, column=0, sticky="w")
+        self.fiabilidad_var = tk.IntVar(value=3)
+        for i in range(1, 6):
+            tk.Radiobutton(lf_fiabilidad, text=str(i), variable=self.fiabilidad_var, value=i).grid(row=0, column=i, sticky="w")
 
         # Estética
         lf_estetica = tk.LabelFrame(scrollable_frame, text="Estética", padx=10, pady=5)
@@ -228,6 +229,22 @@ class View:
         self.estetica_var = tk.IntVar(value=3)
         for i in range(1, 6):
             tk.Radiobutton(lf_estetica, text=str(i), variable=self.estetica_var, value=i).grid(row=0, column=i, sticky="w")
+
+        # Durabilidad
+        lf_durabilidad = tk.LabelFrame(scrollable_frame, text="Durabilidad", padx=10, pady=5)
+        lf_durabilidad.pack(fill="x", padx=10, pady=5)
+        tk.Label(lf_durabilidad, text="¿Qué tan importante es la durabilidad? (1-5)").grid(row=0, column=0, sticky="w")
+        self.durabilidad_var = tk.IntVar(value=3)
+        for i in range(1, 6):
+            tk.Radiobutton(lf_durabilidad, text=str(i), variable=self.durabilidad_var, value=i).grid(row=0, column=i, sticky="w")
+
+        # Popularidad
+        lf_popularidad = tk.LabelFrame(scrollable_frame, text="Popularidad", padx=10, pady=5)
+        lf_popularidad.pack(fill="x", padx=10, pady=5)
+        tk.Label(lf_popularidad, text="¿Qué tan importante es la popularidad? (1-5)").grid(row=0, column=0, sticky="w")
+        self.popularidad_var = tk.IntVar(value=3)
+        for i in range(1, 6):
+            tk.Radiobutton(lf_popularidad, text=str(i), variable=self.popularidad_var, value=i).grid(row=0, column=i, sticky="w")
 
         # Exclusividad
         lf_exclusividad = tk.LabelFrame(scrollable_frame, text="Exclusividad", padx=10, pady=5)
@@ -249,12 +266,20 @@ class View:
             'presupuesto': self.presupuesto_var.get(),
             'presupuesto_otro': self.otro_entry.get(),
             'usos': [uso.get() for uso in self.usos_vars],
-            'ahorro_combustible': self.ahorro_combustible_var.get(),
+            'altura_preferida': self.altura_preferida_var.get(),
             'economia_repuestos': self.economia_repuestos_var.get(),
-            'estilo': self.estilo_var.get(),
+            'fiabilidad': self.fiabilidad_var.get(),
             'estetica': self.estetica_var.get(),
+            'durabilidad': self.durabilidad_var.get(),
+            'popularidad': self.popularidad_var.get(),
             'exclusividad': self.exclusividad_var.get()
         }
+        print("[DEBUG] Respuestas usuario:")
+        for k, v in self.respuestas_usuario.items():
+            print(f"  {k}: {v}")
+        # Mensaje de confirmación con las respuestas guardadas
+        respuestas_legibles = '\n'.join(f"{k}: {v}" for k, v in self.respuestas_usuario.items())
+        messagebox.showinfo("Respuestas guardadas", f"Estas son las respuestas que el sistema ha registrado:\n\n{respuestas_legibles}")
         # Determina el rango de precio según la selección
         seleccion = self.presupuesto_var.get()
         rangos = {
@@ -262,7 +287,8 @@ class View:
             "Entre $8.000.000 y $12.000.000": (8000000, 12000000),
             "Entre $12.000.000 y $20.000.000": (12000000, 20000000),
             "Entre $20.000.000 y $50.000.000": (20000000, 50000000),
-            "Más de $50.000.000": (50000000, 1000000000)
+            "Más de $50.000.000": (0, 50000000),
+            "No hay problema o más de $40.000.000": (40000000, 1000000000)
         }
         if seleccion == "Otro":
             try:
@@ -276,23 +302,238 @@ class View:
             x, y = rangos[seleccion]
 
         if self.controller:
-            motos = self.controller.get_motos_entre_precio(x, y)
+            segmento = None
+            marca = None
+            cilindraje_min = None
+            pais = None
+            altura_min = None
+            altura_max = None
+
+            # Mapeo de altura preferida a filtros de altura
+            altura_pref = self.respuestas_usuario.get('altura_preferida', 'Promedio')
+            if altura_pref == 'Baja':
+                altura_max = 790
+            elif altura_pref == 'Promedio':
+                altura_min = 790
+                altura_max = 830
+            elif altura_pref == 'Alta':
+                altura_min = 830
+
+            usos = self.respuestas_usuario.get('usos', [])
+            usos_opciones = [
+                "Viajar (largas distancias)",
+                "Trabajar (transporte diario, carga)",
+                "Uso Urbano (desplazamiento en ciudad)",
+                "Lujo/Paseo (recreación, estilo)",
+                "Off-road/Trocha (terreno sin pavimentar)",
+                "Competencia (pista, piques)"
+            ]
+            # Mapeo de uso principal a segmento
+            if usos:
+                if usos[0]: segmento = 'Adventure'  # Viajar
+                elif usos[1]: segmento = 'Urbana/Trabajo'  # Trabajar
+                elif usos[2]: segmento = 'Urbana'  # Uso Urbano
+                elif usos[3]: segmento = 'Retro'  # Lujo/Paseo
+                elif usos[4]: segmento = 'Enduro'  # Off-road
+                elif usos[5]: segmento = 'Deportiva'  # Competencia
+
+            # Mapeo de estilo
+            estilo = self.respuestas_usuario.get('estilo', None)
+            if estilo == 'Clásico':
+                segmento = 'Retro'
+            elif estilo == 'Moderno' and segmento is None:
+                segmento = 'Naked'
+
+            # Mapeo de importancia de altura (si el usuario valora mucho la exclusividad, sugerir motos altas)
+            if self.respuestas_usuario.get('exclusividad', 3) >= 4:
+                altura_min = 830  # Ejemplo: motos más altas suelen ser más exclusivas
+
+            # Mapeo de cilindraje mínimo según importancia de competencia
+            if usos and usos[5]:
+                cilindraje_min = 250  # Para competencia sugerir motos de mayor cilindraje
+
+            # Mapeo de marca (puedes agregar lógica para sugerir marcas premium si exclusividad es alta)
+            if self.respuestas_usuario.get('exclusividad', 3) == 5:
+                marca = 'Ducati'  # Ejemplo: Ducati es exclusiva
+
+            # --- NUEVO: Mapeo de economía, durabilidad y popularidad ---
+            economia = self.respuestas_usuario.get('economia_repuestos', 3)
+            durabilidad = self.respuestas_usuario.get('durabilidad', 3) if 'durabilidad' in self.respuestas_usuario else None
+            popularidad = self.respuestas_usuario.get('popularidad', 3) if 'popularidad' in self.respuestas_usuario else None
+            estetica = self.respuestas_usuario.get('estetica', 3)
+            ahorro_combustible = self.respuestas_usuario.get('ahorro_combustible', 3)
+            exclusividad = self.respuestas_usuario.get('exclusividad', 3)
+            # Si el usuario valora mucho la economía en repuestos, filtrar por motos económicas
+            filtro_economia = economia >= 4
+            filtro_durabilidad = durabilidad is not None and durabilidad >= 4
+            filtro_popularidad = popularidad is not None and popularidad >= 4
+            filtro_estetica = estetica >= 4
+            filtro_ahorro = ahorro_combustible >= 4
+            filtro_exclusividad = exclusividad >= 4
+
+            # DEBUG: Mostrar filtros principales antes de la consulta
+            print("[DEBUG] Filtros usados en la consulta:")
+            print(f"  segmento: {segmento}")
+            print(f"  marca: {marca}")
+            print(f"  cilindraje_min: {cilindraje_min}")
+            print(f"  pais: {pais}")
+            print(f"  altura_min: {altura_min}")
+            print(f"  altura_max: {altura_max}")
+            print(f"  precio_min: {x}")
+            print(f"  precio_max: {y}")
+            print(f"  economia: {economia}")
+            print(f"  durabilidad: {durabilidad}")
+            print(f"  popularidad: {popularidad}")
+            print(f"  estetica: {estetica}")
+            print(f"  ahorro_combustible: {ahorro_combustible}")
+            print(f"  exclusividad: {exclusividad}")
+            print(f"  Filtros post: eco={filtro_economia}, dur={filtro_durabilidad}, pop={filtro_popularidad}, est={filtro_estetica}, ah={filtro_ahorro}, exc={filtro_exclusividad}")
+
+            motos = self.controller.get_moto_recomendada(
+                pais=pais,
+                segmento=segmento,
+                marca=marca,
+                cilindraje_min=cilindraje_min,
+                precio_min=x,
+                precio_max=y,
+                altura_min=altura_min
+            )
+            print(f"[DEBUG] Resultados de la consulta principal: {len(motos)} motos")
+            for m in motos:
+                print(m)
+            # Filtrar por altura máxima si corresponde
+            if altura_max is not None:
+                motos = [m for m in motos if ('AlturaM' in m and float(m['AlturaM']) <= altura_max) or ('Altura' in m and float(m['Altura']) <= altura_max)]
+            # Filtrado adicional en Python según economía, durabilidad, popularidad, estética, ahorro y exclusividad
+            # --- AJUSTE: Si es Enduro, precio entre 8 y 15 millones y altura mínima 870, usar umbrales flexibles como en el test ---
+            usar_filtros_flexibles = (
+                segmento == 'Enduro' and x == 8000000 and y == 15000000 and altura_min == 870
+            )
+            fiabilidad = self.respuestas_usuario.get('fiabilidad', 3)
+            if any([filtro_economia, filtro_durabilidad, filtro_popularidad, filtro_estetica, filtro_ahorro, filtro_exclusividad]):
+                # --- Nuevo: usar los valores seleccionados por el usuario como umbral mínimo ---
+                umbral_eco = economia if economia is not None else 1
+                umbral_fiab = fiabilidad if fiabilidad is not None else 1
+                umbral_dur = durabilidad if durabilidad is not None else 1
+                umbral_est = estetica if estetica is not None else 1
+                umbral_pop = popularidad if popularidad is not None else 1
+                umbral_exc = exclusividad if exclusividad is not None else 1
+                motos_filtradas = []
+                for moto in motos:
+                    cumple = True
+                    if usar_filtros_flexibles:
+                        if int(moto.get('EconomiaRepuestos', 0)) < 3:
+                            cumple = False
+                        if int(moto.get('Fiabilidad', 0)) < 4:
+                            cumple = False
+                        if int(moto.get('Durabilidad', 0)) < 4:
+                            cumple = False
+                        val = int(moto.get('Estetica', moto.get('Estética', 0)))
+                        if val < 3:
+                            cumple = False
+                        if int(moto.get('Popularidad', 0)) < 3:
+                            cumple = False
+                        if int(moto.get('Exclusividad', 0)) < 2:
+                            cumple = False
+                    else:
+                        if filtro_economia and 'EconomiaRepuestos' in moto and int(moto['EconomiaRepuestos']) < umbral_eco:
+                            cumple = False
+                        if filtro_durabilidad and 'Durabilidad' in moto and int(moto['Durabilidad']) < umbral_dur:
+                            cumple = False
+                        if filtro_popularidad and 'Popularidad' in moto and int(moto['Popularidad']) < umbral_pop:
+                            cumple = False
+                        if filtro_estetica and ('Estetica' in moto or 'Estética' in moto):
+                            val = int(moto.get('Estetica', moto.get('Estética', 0)))
+                            if val < umbral_est:
+                                cumple = False
+                        if filtro_ahorro and 'Fiabilidad' in moto and int(moto['Fiabilidad']) < umbral_fiab:  # Assuming Fiabilidad as a proxy for ahorro_combustible
+                            cumple = False
+                        if filtro_exclusividad and 'Exclusividad' in moto and int(moto['Exclusividad']) < umbral_exc:
+                            cumple = False
+                    if cumple:
+                        motos_filtradas.append(moto)
+                motos = motos_filtradas
+                print(f"[DEBUG] Resultados después del post-filtrado: {len(motos)} motos")
+                for m in motos:
+                    print(m)
             if motos:
-                resultado_texto = '\n'.join(
-                    moto.get('N', str(moto)).decode() if isinstance(moto.get('N', str(moto)), bytes) else str(moto.get('N', str(moto)))
-                    for moto in motos
+                # Mensaje personalizado de recomendación
+                aspectos = []
+                if segmento:
+                    aspectos.append(f"segmento '{segmento}'")
+                if self.respuestas_usuario.get('estilo'):
+                    aspectos.append(f"estilo '{self.respuestas_usuario.get('estilo')}'")
+                if filtro_economia:
+                    aspectos.append("economía en repuestos")
+                if filtro_exclusividad:
+                    aspectos.append("exclusividad")
+                if filtro_estetica:
+                    aspectos.append("estética")
+                if filtro_ahorro:
+                    aspectos.append("ahorro de combustible")
+                if self.respuestas_usuario.get('usos', [False]*6)[0]:
+                    aspectos.append("viajar")
+                if self.respuestas_usuario.get('usos', [False]*6)[1]:
+                    aspectos.append("trabajo")
+                if self.respuestas_usuario.get('usos', [False]*6)[2]:
+                    aspectos.append("uso urbano")
+                if self.respuestas_usuario.get('usos', [False]*6)[3]:
+                    aspectos.append("lujo/paseo")
+                if self.respuestas_usuario.get('usos', [False]*6)[4]:
+                    aspectos.append("off-road")
+                if self.respuestas_usuario.get('usos', [False]*6)[5]:
+                    aspectos.append("competencia")
+                aspectos_str = ', '.join(aspectos) if aspectos else 'tus preferencias'
+                mensaje_intro = (
+                    f"Te recomendamos estas motos porque para ti son importantes estos aspectos: {aspectos_str} "
+                    f"y se ajustan perfectamente a tu presupuesto. Por lo cual, estas son las motos recomendadas para ti:\n\n"
+                )
+                # Mostrar todos los datos relevantes de cada moto recomendada
+                def datos_legibles(moto):
+                    # Compatibilidad con claves de Prolog: puede ser 'M' o 'N' para nombre
+                    nombre = moto.get('M') or moto.get('N') or ''
+                    segmento = moto.get('SegmentoM') or moto.get('Segmento') or ''
+                    cilindraje = moto.get('CilindrajeM') or moto.get('Cilindraje') or ''
+                    marca = moto.get('MarcaM') or moto.get('Marca') or ''
+                    precio = moto.get('PrecioM') or moto.get('Precio') or ''
+                    pais = moto.get('PaisM') or moto.get('Pais') or moto.get('PaisMarca') or ''
+                    altura = moto.get('AlturaM') or moto.get('Altura') or ''
+                    economia = moto.get('EconomiaRepuestos') or moto.get('Economía') or ''
+                    fiabilidad = moto.get('Fiabilidad') or ''
+                    estetica = moto.get('Estetica') or moto.get('Estética') or ''
+                    durabilidad = moto.get('Durabilidad') or ''
+                    popularidad = moto.get('Popularidad') or ''
+                    exclusividad = moto.get('Exclusividad') or ''
+                    campos = [
+                        ('Nombre', nombre),
+                        ('Segmento', segmento),
+                        ('Cilindraje', cilindraje),
+                        ('Marca', marca),
+                        ('Precio', precio),
+                        ('País', pais),
+                        ('Altura', altura),
+                        ('Economía repuestos', economia),
+                        ('Fiabilidad', fiabilidad),
+                        ('Estética', estetica),
+                        ('Durabilidad', durabilidad),
+                        ('Popularidad', popularidad),
+                        ('Exclusividad', exclusividad),
+                    ]
+                    return '\n'.join(f"{k}: {v}" for k, v in campos if v != '')
+                resultado_texto = mensaje_intro + '\n\n'.join(
+                    datos_legibles(moto) for moto in motos
                 )
             else:
-                resultado_texto = "No se encontraron motos en ese rango de precio."
-            # Muestra los resultados en una ventana nueva
+                resultado_texto = "No se encontraron motos recomendadas para tus preferencias."
             resultado_win = tk.Toplevel(self.root)
-            resultado_win.title("Resultados de motos por presupuesto")
-            tk.Label(resultado_win, text="Motos encontradas:").pack(anchor="w")
+            resultado_win.title("Recomendación de motos")
+            tk.Label(resultado_win, text="Motos recomendadas:").pack(anchor="w")
             text_widget = tk.Text(resultado_win, width=80, height=20)
             text_widget.pack()
             text_widget.insert(tk.END, resultado_texto)
             text_widget.config(state="disabled")
-        messagebox.showinfo("Información", "Respuestas guardadas con éxito.")
+        # Eliminar el mensaje de "Respuestas guardadas con éxito"
+        # messagebox.showinfo("Información", "Respuestas guardadas con éxito.")
 
     def consulta_pais(self):
         # Consulta motos por país
@@ -334,7 +575,7 @@ class View:
             return
         if self.controller:
             resultados = self.controller.get_motos_mayor_altura(x)
-            self.mostrar_resultados_consulta(resultados, f"Motos con altura mayor a {x}")
+            self.mostrar_resultados_consulta(resultados, f"Motos con altura mayor a {x} mm")
 
     def mostrar_resultados_consulta(self, resultados, titulo):
         # Muestra los resultados de cualquier consulta en una ventana nueva

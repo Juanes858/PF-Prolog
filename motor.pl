@@ -13,10 +13,34 @@
 % Inserta un hecho moto/13 en la base de conocimiento.
 % Uso típico desde Python para cargar datos desde CSV.
 % Ejemplo de uso:
-% ?- agregar_hecho('XR150L','Enduro',150,'Honda',12000000,'Japón',0.825,8,9,7,8,10,5).
+% ?- agregar_hecho('XR150L','Enduro',150,'Honda',12000000,'Japón',825,8,9,7,8,10,5).
+% (Altura en milímetros, no en metros)
 % ----------------------------------------------------------------------
 agregar_hecho(Nombre,Segmento,Cilindraje,Marca,Precio,Pais,Altura,EconomiaRepuestos,Fiabilidad,Estetica,Durabilidad,Popularidad,Exclusividad) :-
     assertz(moto(Nombre,Segmento,Cilindraje,Marca,Precio,Pais,Altura,EconomiaRepuestos,Fiabilidad,Estetica,Durabilidad,Popularidad,Exclusividad)).
+
+
+% ----------------------------------------------------------------------    
+% moto_recomendada/8
+% Recomendación de motos basada en los criterios del usuario.
+% Los argumentos pueden ser variables anónimas (_) si el usuario no filtra por ese criterio.
+% Ejemplo de uso:
+% ?- moto_recomendada(_, 'Enduro', _, _, 8000000, 15000000, 870, M).
+%   Devuelve motos del segmento 'Enduro', precio entre 8 y 15 millones, altura mínima 870mm.
+% ?- moto_recomendada('Japón', _, _, _, _, _, _, M).
+%   Devuelve todas las motos de Japón.
+% Argumentos:
+%   Pais, Segmento, Marca, CilindrajeMin, PrecioMin, PrecioMax, AlturaMin, Moto
+% ----------------------------------------------------------------------
+moto_recomendada(Pais, Segmento, Marca, CilindrajeMin, PrecioMin, PrecioMax, AlturaMin, Moto) :-
+    moto(Moto, SegmentoM, CilindrajeM, MarcaM, PrecioM, PaisM, AlturaM, _, _, _, _, _, _),
+    (var(Pais); Pais == PaisM),
+    (var(Segmento); Segmento == SegmentoM),
+    (var(Marca); Marca == MarcaM),
+    (var(CilindrajeMin); CilindrajeM >= CilindrajeMin),
+    (var(PrecioMin); PrecioM >= PrecioMin),
+    (var(PrecioMax); PrecioM =< PrecioMax),
+    (var(AlturaMin); AlturaM >= AlturaMin).
 
 % ----------------------------------------------------------------------
 % marcas/1
@@ -108,7 +132,7 @@ motos_entre_precio(X, Y, N) :-
 % motos_mayor_altura/2
 % Obtiene los nombres de motos con altura mayor a X.
 % Ejemplo de uso:
-% ?- motos_mayor_altura(0.85, Nombre).
+% ?- motos_mayor_altura(850, Nombre).
 % ----------------------------------------------------------------------
 motos_mayor_altura(X, N) :- moto(N, _, _, _, _, _, Altura, _, _, _, _, _, _), Altura > X.
 
@@ -116,7 +140,7 @@ motos_mayor_altura(X, N) :- moto(N, _, _, _, _, _, Altura, _, _, _, _, _, _), Al
 % motos_menor_altura/2
 % Obtiene los nombres de motos con altura menor a X.
 % Ejemplo de uso:
-% ?- motos_menor_altura(0.8, Nombre).
+% ?- motos_menor_altura(800, Nombre).
 % ----------------------------------------------------------------------
 motos_menor_altura(X, N) :- moto(N, _, _, _, _, _, Altura, _, _, _, _, _, _), Altura < X.
 
@@ -124,7 +148,7 @@ motos_menor_altura(X, N) :- moto(N, _, _, _, _, _, Altura, _, _, _, _, _, _), Al
 % motos_entre_altura/3
 % Obtiene los nombres de motos con altura entre X e Y.
 % Ejemplo de uso:
-% ?- motos_entre_altura(0.75, 0.85, Nombre).
+% ?- motos_entre_altura(750, 850, Nombre).
 % ----------------------------------------------------------------------
 motos_entre_altura(X, Y, N) :-
     moto(N, _, _, _, _, _, Altura, _, _, _, _, _, _), 

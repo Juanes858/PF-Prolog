@@ -119,5 +119,20 @@ class Controller:
         # Devuelve una lista de motos con altura en un rango específico
         return self.engine.get_motos_entre_altura(x, y)
 
+    def get_moto_recomendada(self, pais=None, segmento=None, marca=None, cilindraje_min=None, precio_min=None, precio_max=None, altura_min=None):
+        """
+        Devuelve una lista de motos recomendadas según los filtros proporcionados.
+        Los argumentos pueden ser None para no filtrar por ese criterio.
+        """
+        return self.engine.consultar_moto_recomendada(
+            pais=pais,
+            segmento=segmento,
+            marca=marca,
+            cilindraje_min=cilindraje_min,
+            precio_min=precio_min,
+            precio_max=precio_max,
+            altura_min=altura_min
+        )
+
 
 
